@@ -19,7 +19,7 @@ class Fixed
 
     private:
         int _rawBits;
-        static int _fractional_bits;
+        static int _fractionalBits;
 };
 
 #endif

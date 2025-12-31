@@ -12,7 +12,7 @@ Fixed::Fixed(Fixed const & rhs)
     *this = rhs;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs) // right hand side
+Fixed & Fixed::operator=(Fixed const & rhs)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     this->_rawBits = rhs.getRawBits();
@@ -35,4 +35,4 @@ void Fixed::setRawBits(int const raw)
     _rawBits = raw;
 }
 
-int Fixed::_fractional_bits = 8;
+int Fixed::_fractionalBits = 8;
