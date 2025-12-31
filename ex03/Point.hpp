@@ -11,10 +11,10 @@ class Point
         Point( Point const & );
         ~Point();
         
-        Point & operator=( Point const & ) = delete;
+        // Point & operator=( Point const & ) = delete;
 
-        Fixed getX()const;
-        Fixed getY()const;
+        Fixed getX() const;
+        Fixed getY() const;
 
     private:
         Fixed const _x;      

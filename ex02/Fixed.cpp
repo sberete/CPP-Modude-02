@@ -8,9 +8,9 @@ Fixed::Fixed( int const nb )
     _rawBits =  nb << _fractionalBits;
 }
         
-Fixed::Fixed( Fixed const & rhs )
+Fixed::Fixed( Fixed const & src )
 {
-    *this = rhs;
+    *this = src;
 }
 
 Fixed::Fixed( float const nb )
@@ -30,18 +30,18 @@ int Fixed::toInt() const
     return _rawBits >> _fractionalBits;
 }
 
-Fixed & Fixed::operator=(Fixed const & rhs)
+Fixed & Fixed::operator=( Fixed const & rhs )
 {
     this->_rawBits = rhs.getRawBits();
     return *this;
 }
 
-int Fixed::getRawBits()const
+int Fixed::getRawBits() const
 {
     return this->_rawBits;
 }
 
-void Fixed::setRawBits(int const raw)
+void Fixed::setRawBits( int const raw )
 {
     _rawBits = raw;
 }
@@ -90,7 +90,7 @@ Fixed Fixed::operator-( Fixed const & rhs ) const
     return result;
 }
 
-Fixed Fixed::operator*(Fixed const & rhs) const 
+Fixed Fixed::operator*( Fixed const & rhs ) const 
 {
     Fixed result;
     long tmp = (long)this->_rawBits * (long)rhs.getRawBits();
@@ -98,7 +98,7 @@ Fixed Fixed::operator*(Fixed const & rhs) const
     return result;
 }
 
-Fixed Fixed::operator/(Fixed const & rhs) const 
+Fixed Fixed::operator/( Fixed const & rhs ) const 
 {
     Fixed result;
     long tmp = ((long)this->_rawBits << _fractionalBits);
@@ -112,7 +112,7 @@ Fixed & Fixed::operator++()
     return *this;
 }
 
-Fixed Fixed::operator++(int)
+Fixed Fixed::operator++( int )
 {
     Fixed result(*this);   // sauvegarde l'ancienne valeur
     this->_rawBits++;      // incrémentation réelle
@@ -132,7 +132,7 @@ Fixed Fixed::operator--( int )
     return result;   
 } //post decrementation
 
-Fixed & Fixed::min(Fixed & lhs, Fixed & rhs)
+Fixed & Fixed::min( Fixed & lhs, Fixed & rhs )
 {
     if (lhs.getRawBits() < rhs.getRawBits())
         return lhs;

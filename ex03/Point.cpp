@@ -6,7 +6,7 @@ Point::Point( float const x, float const y ) : _x(x), _y(y) {}
 
 Point::Point(Point const & src) : _x(src.getX()), _y(src.getY()) {}
 
-Point & Point::operator=( Point const & rhs ){}
+// Point & Point::operator=( Point const & rhs ){}
 
 Point::~Point(){}
 
