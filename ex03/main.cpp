@@ -1,18 +1,8 @@
-#include <iostream>
 #include "Point.hpp"
 
-bool bsp(Point const a, Point const b, Point const c, Point const point);
-
-// Fonction utilitaire pour afficher un test
-void test(const std::string& description,
-          const Point& a,
-          const Point& b,
-          const Point& c,
-          const Point& p)
+void test(const std::string& description, const Point& a, const Point& b, const Point& c, const Point& p)
 {
-    std::cout << description << " : "
-              << (bsp(a, b, c, p) ? "INSIDE" : "OUTSIDE")
-              << std::endl;
+    std::cout << description << " : " << (bsp(a, b, c, p) ? "INSIDE" : "OUTSIDE") << std::endl;
 }
 
 int main()
