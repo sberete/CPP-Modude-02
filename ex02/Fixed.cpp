@@ -114,9 +114,9 @@ Fixed & Fixed::operator++()
 
 Fixed Fixed::operator++( int )
 {
-    Fixed result(*this);   // sauvegarde l'ancienne valeur
-    this->_rawBits++;      // incrémentation réelle
-    return result;         // retourne l'ancienne valeur
+    Fixed result(*this);
+    this->_rawBits++;
+    return result;
 }
 
 Fixed & Fixed::operator--() 
@@ -127,10 +127,10 @@ Fixed & Fixed::operator--()
 
 Fixed Fixed::operator--( int ) 
 {
-    Fixed result(*this);   // sauvegarde l'ancienne valeur
-    this->_rawBits--;      // incrémentation réelle
+    Fixed result(*this);
+    this->_rawBits--;
     return result;   
-} //post decrementation
+}
 
 Fixed & Fixed::min( Fixed & lhs, Fixed & rhs )
 {
